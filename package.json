@@ -1,0 +1,15 @@
+{
+  "name": "advent-of-code-2025",
+  "private": "true",
+  "version": "1.0.0",
+  "workspaces": ["lib", "days/*"],
+  "scripts": {
+      "dev": "bun run exec --filter '01'"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
