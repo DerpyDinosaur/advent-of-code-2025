@@ -6,7 +6,6 @@ const sample = [`11-22,95-115,998-1012,1188511880-1188511890,222220-222224,16985
 
 test("Test solution one on sample", async () => {
   const result = await solution_one(sample);
-  console.log(result)
   expect(result).toBe(1227775554);
 });
 
