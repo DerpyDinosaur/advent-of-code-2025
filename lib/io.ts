@@ -4,7 +4,7 @@ export async function load_data(path: string, mode: 'line' = 'line') {
 
     let data;
     if (mode === "line") {
-        data = content.split("\n");
+        data = content.trim().split("\n");
     }
 
     if (!data) process.exit(0);
