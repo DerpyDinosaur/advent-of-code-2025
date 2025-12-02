@@ -26,7 +26,5 @@ export default async function task_one(puzzle: string[]): Promise<number> {
     }
   }
 
-  answer = invalids.reduce((acc, value) => acc += value, 0)
-
-  return answer
+  return invalids.reduce((acc, value) => acc += value, 0)
 }
