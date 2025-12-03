@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "workspaces": ["lib", "days/*"],
   "scripts": {
-      "dev": "bun run exec --filter '01'"
+      "dev": "bun run exec --filter '01'",
+      "mkday": "bun run ./scripts/create-day.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
