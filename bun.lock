@@ -1,6 +1,5 @@
 {
   "lockfileVersion": 1,
-  "configVersion": 0,
   "workspaces": {
     "": {
       "name": "advent-of-code-2025",
@@ -35,6 +34,27 @@
       "name": "03",
       "devDependencies": {
         "@types/bun": "latest",
+        "lib": "workspace:*",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
+    "days/04": {
+      "name": "04",
+      "devDependencies": {
+        "@types/bun": "latest",
+        "lib": "workspace:*",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
+    "days/05": {
+      "name": "05",
+      "devDependencies": {
+        "@types/bun": "latest",
+        "lib": "workspace:*",
       },
       "peerDependencies": {
         "typescript": "^5",
@@ -56,6 +76,10 @@
     "02": ["02@workspace:days/02"],
 
     "03": ["03@workspace:days/03"],
+
+    "04": ["04@workspace:days/04"],
+
+    "05": ["05@workspace:days/05"],
 
     "@types/bun": ["@types/bun@1.3.3", "", { "dependencies": { "bun-types": "1.3.3" } }, "sha512-ogrKbJ2X5N0kWLLFKeytG0eHDleBYtngtlbu9cyBKFtNL3cnpDZkNdQj8flVf6WTZUX5ulI9AY1oa7ljhSrp+g=="],
 

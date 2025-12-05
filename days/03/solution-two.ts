@@ -1,36 +1,32 @@
-function combinations(arr: number[]) {
-  const result: number[][] = [[]];
-
-  for (const item of arr) {
-    const currentLength = result.length;
-    for (let i = 0; i < currentLength; i++) {
-        const combination = [...result[i]!, item];
-        result.push(combination);
-    }
-  }
-
-  return Math.max(...result
-    .filter(x => x.length === 12)
-    .map(x => Number(x.toString().split(',').join(''))))
-}
+const CAPACITY = 12;
 
 export default async function solution(puzzle: string[]): Promise<number> {
-    let answer = 0;
+  let joltage = 0;
 
-    for (const line of puzzle) {
-        const bank = line.split("").map(Number);
-        let maxJoltage = 0;
+  for (const banks of puzzle) {
+    const batteries = banks.split('').map(Number);
+    const switched_on: number[] = [];
+    let start = 0;
 
-        let joltage = combinations(bank);
-        console.log(joltage)
-        // console.log(joltage)
-        // joltage.forEach(x => {
-        //     const n = Number(x.toString().split(',').join(''));
-        //     maxJoltage = Math.max(maxJoltage, n);
-        // });
+    for (let slot = 0; slot < CAPACITY; slot++) {
+      const end = batteries.length - (CAPACITY - 1 - slot);
 
-        answer += maxJoltage;
+      let max = batteries[start]!;
+      let max_index = start;
+
+      for (let i = start + 1; i < end; i++) {
+        if (batteries[i]! > max) {
+          max = batteries[i]!;
+          max_index = i;
+        }
+      }
+
+      switched_on.push(max);
+      start = max_index + 1;
     }
 
-    return answer;
+    joltage += parseInt(switched_on.join(''));
+  }
+
+  return joltage;
 }
