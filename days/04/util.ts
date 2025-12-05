@@ -38,3 +38,32 @@ export const direction_coord = (direction: Direction): Pos => {
 export const valid_coord = (x:number, y:number, max_grid_x:number, max_grid_y:number) => {
   return (x >= 0 && x < max_grid_x && y >= 0 && y < max_grid_y);
 }
+
+export function accessible_hay(grid: string[][], position: Pos): boolean {
+  let hay_count: number = 0;
+
+  for (const dir in Direction) {
+    if (!isNaN(Number(dir))) continue;
+    const diff = direction_coord(Direction[dir]);
+
+    let next: Pos = {
+      x: position.x + diff.x,
+      y: position.y + diff.y,
+    };
+
+    if (valid_coord(next.x, next.y, grid.length, grid.length)) {
+      if (grid[next.y]![next.x] === "@"){
+        hay_count++;
+      }
+      // console.log(dir)
+      // console.log(grid[next.y]![next.x])
+      // console.log("")
+    }
+
+    // console.log(diff.x, diff.y)
+    // console.log(next.x, next.y)
+    // console.log("")
+  }
+
+  return hay_count < 4;
+}
