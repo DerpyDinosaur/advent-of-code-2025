@@ -6,8 +6,6 @@ export default async function solution(puzzle: string[]): Promise<number> {
     return acc;
   }, {});
 
-  let answer = 0;
-
   for (const range of ranges) {
     const [first, last] = range.split('-').map(Number);
     if (!first || !last) continue;

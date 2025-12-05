@@ -4,11 +4,14 @@
   "version": "1.0.0",
   "workspaces": ["lib", "days/*"],
   "scripts": {
-      "dev": "bun run exec --filter '01'",
-      "mkday": "bun run ./scripts/create-day.ts"
+    "dev": "bun run exec --filter '01'",
+    "mkday": "bun run ./scripts/create-day.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.48.1",
+    "@typescript-eslint/parser": "^8.48.1",
+    "eslint": "^9.39.1"
   },
   "peerDependencies": {
     "typescript": "^5"
