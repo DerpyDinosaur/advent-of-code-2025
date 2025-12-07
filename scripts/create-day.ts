@@ -73,3 +73,4 @@ await Bun.write(path + '/index.ts', index_file);
 await Bun.write(path + '/index.test.ts', test_file);
 await Bun.write(path + '/solution-one.ts', solution_file);
 await Bun.write(path + '/solution-two.ts', solution_file);
+await Bun.write(path + '/puzzle.txt', "");
