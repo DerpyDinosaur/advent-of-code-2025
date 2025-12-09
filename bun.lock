@@ -71,6 +71,25 @@
         "typescript": "^5",
       },
     },
+    "days/07": {
+      "name": "07",
+      "devDependencies": {
+        "@types/bun": "latest",
+        "lib": "workspace:*",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
+    "days/08": {
+      "name": "08",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "lib": {
       "name": "lib",
       "devDependencies": {
@@ -93,6 +112,10 @@
     "05": ["05@workspace:days/05"],
 
     "06": ["06@workspace:days/06"],
+
+    "07": ["07@workspace:days/07"],
+
+    "08": ["08@workspace:days/08"],
 
     "@types/bun": ["@types/bun@1.3.4", "", { "dependencies": { "bun-types": "1.3.4" } }, "sha512-EEPTKXHP+zKGPkhRLv+HI0UEX8/o+65hqARxLy8Ov5rIxMBPNTjeZww00CIihrIQGEQBYg+0roO5qOnS/7boGA=="],
 

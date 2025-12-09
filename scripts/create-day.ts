@@ -1,6 +1,8 @@
 import { parseArgs } from "util";
 import { mkdir } from "node:fs/promises";
 import { $ } from "bun";
+import { existsSync } from "fs";
+import { stat } from "fs/promises";
 
 const { values, positionals } = parseArgs({
   args: Bun.argv,
@@ -71,6 +73,10 @@ const tsconfig = `{
 }`
 
 const path = `./days/${values.day}`;
+if (existsSync(path)) {
+  throw Error("Day already exists")
+}
+
 await $`bun init ${path} -y`;
 await Bun.write(path + '/package.json', JSON.stringify(package_json, null, 4));
 await Bun.write(path + '/index.ts', index_file);
