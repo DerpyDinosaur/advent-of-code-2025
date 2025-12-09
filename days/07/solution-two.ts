@@ -1,1 +1,0 @@
-export default async function solution(puzzle: Unknown): Unknown {}

@@ -1,8 +1,8 @@
 export default async function solution(puzzle: string[]): Promise<number> {
-  const ranges: {first:number, last:number}[] = puzzle
-    .filter(x => x.includes("-"))
-    .map(range => {
-      const [first = 0, last = 0] = range.split('-').map(Number);
+  const ranges: { first: number; last: number }[] = puzzle
+    .filter((x) => x.includes("-"))
+    .map((range) => {
+      const [first = 0, last = 0] = range.split("-").map(Number);
       return { first, last };
     })
     .sort((a, b) => a.first - b.first);

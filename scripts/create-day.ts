@@ -66,6 +66,10 @@ test("Test solution two on sample", async () => {
   expect(result).toBe(true)
 });`;
 
+const tsconfig = `{
+  "extends": "../tsconfig.base.json",
+}`
+
 const path = `./days/${values.day}`;
 await $`bun init ${path} -y`;
 await Bun.write(path + '/package.json', JSON.stringify(package_json, null, 4));
@@ -74,3 +78,4 @@ await Bun.write(path + '/index.test.ts', test_file);
 await Bun.write(path + '/solution-one.ts', solution_file);
 await Bun.write(path + '/solution-two.ts', solution_file);
 await Bun.write(path + '/puzzle.txt', "");
+await Bun.write(path + '/tsconfig.json', tsconfig);

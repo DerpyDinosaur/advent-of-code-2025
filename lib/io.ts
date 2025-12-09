@@ -1,13 +1,19 @@
-export async function load_data(path: string, mode: 'line' = 'line') {
-    const file = Bun.file(path);
-    const content = await file.text();
+type LoadDataModes = "line" | "no-trim";
 
-    let data;
-    if (mode === "line") {
-        data = content.trim().split(/\r?\n/);
-    }
+export async function load_data(path: string, mode: LoadDataModes = "line") {
+  const file = Bun.file(path);
+  const content = await file.text();
 
-    if (!data) process.exit(0);
+  let data;
+  if (mode === "line") {
+    data = content.trim().split(/\r?\n/);
+  }
 
-    return data;
+  if (mode === "no-trim") {
+    data = content.split("\n").filter(Boolean);
+  }
+
+  if (!data) process.exit(0);
+
+  return data;
 }

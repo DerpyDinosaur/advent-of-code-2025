@@ -1,8 +1,8 @@
-import { load_data } from 'lib';
-import solution_one from './solution-one';
-import solution_two from './solution-two';
+import { load_data } from "lib";
+import solution_one from "./solution-one";
+import solution_two from "./solution-two";
 
-const puzzle = await load_data(import.meta.dir + '/puzzle.txt');
+const puzzle = await load_data(import.meta.dir + "/puzzle.txt", "no-trim");
 
 const answer_one = await solution_one(puzzle);
 const answer_two = await solution_two(puzzle);

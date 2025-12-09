@@ -4,7 +4,7 @@ export default async function solution(puzzle: string[]): Promise<number> {
   let joltage = 0;
 
   for (const banks of puzzle) {
-    const batteries = banks.split('').map(Number);
+    const batteries = banks.split("").map(Number);
     const switched_on: number[] = [];
     let start = 0;
 
@@ -25,7 +25,7 @@ export default async function solution(puzzle: string[]): Promise<number> {
       start = max_index + 1;
     }
 
-    joltage += parseInt(switched_on.join(''));
+    joltage += parseInt(switched_on.join(""));
   }
 
   return joltage;

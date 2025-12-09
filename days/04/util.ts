@@ -1,7 +1,7 @@
 export type Pos = {
-    x: number;
-    y: number;
-}
+  x: number;
+  y: number;
+};
 
 export enum Direction {
   N,
@@ -33,11 +33,16 @@ export const direction_coord = (direction: Direction): Pos => {
     case Direction.NW:
       return { x: -1, y: -1 };
   }
-}
+};
 
-export const valid_coord = (x:number, y:number, max_grid_x:number, max_grid_y:number) => {
-  return (x >= 0 && x < max_grid_x && y >= 0 && y < max_grid_y);
-}
+export const valid_coord = (
+  x: number,
+  y: number,
+  max_grid_x: number,
+  max_grid_y: number,
+) => {
+  return x >= 0 && x < max_grid_x && y >= 0 && y < max_grid_y;
+};
 
 export function accessible_hay(grid: string[][], position: Pos): boolean {
   let hay_count: number = 0;
@@ -52,7 +57,7 @@ export function accessible_hay(grid: string[][], position: Pos): boolean {
     };
 
     if (valid_coord(next.x, next.y, grid.length, grid.length)) {
-      if (grid[next.y]![next.x] === "@"){
+      if (grid[next.y]![next.x] === "@") {
         hay_count++;
       }
       // console.log(dir)
